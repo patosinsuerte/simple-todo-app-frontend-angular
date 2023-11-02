@@ -1,0 +1,15 @@
+.inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    width: 500px;
+}
+.btn {
+    width: 150px;
+}
+.edit-input {
+    gap: 1em;
+}
+.add-input {
+    gap: 1em;
+}

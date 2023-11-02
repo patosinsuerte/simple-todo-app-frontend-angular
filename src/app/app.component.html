@@ -1,0 +1,15 @@
+<div class="tasks">
+    <div class="tasks-inputs">
+        <tasks-tasks-inputs
+            [testId]="testId"
+            (onEmitLastValue)="handleEditClick($event)"
+            [isClicked]="isTableClicked"
+        ></tasks-tasks-inputs>
+    </div>
+    <div class="tasks-table">
+        <app-tasks-table
+            (editTaskEventId)="handleEventId($event)"
+            (editClick)="handleEditClick($event)"
+        ></app-tasks-table>
+    </div>
+</div>

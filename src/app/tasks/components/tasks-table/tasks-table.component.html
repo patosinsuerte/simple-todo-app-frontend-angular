@@ -1,0 +1,65 @@
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Task</th>
+            <th>Status</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let task of tasks">
+            <td>{{ task.task }}</td>
+            <td>
+                <button
+                    [ngClass]="
+                        task.status === 'INCOMPLETE'
+                            ? 'btn btn-warning'
+                            : 'btn btn-success'
+                    "
+                    (click)="updateStatus(task.id, task.status)"
+                >
+                    {{ task.status }}
+                </button>
+            </td>
+            <td>
+                <button
+                    class="btn btn-primary"
+                    (click)="editOnClick()"
+                    [attr.data-id]="task.id"
+                    (click)="editTaskEmitId(task.id.toString())"
+                >
+                    Edit
+                </button>
+            </td>
+            <td>
+                <button
+                    class="btn btn-danger"
+                    [attr.data-id]="task.id"
+                    (click)="deleteTask(task.id)"
+                >
+                    Delete
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<!--
+
+        <tr>
+            <td>Pasear al perro</td>
+            <td><button class="btn btn-warning">INCOMPLETE</button></td>
+            <td>
+                <button class="btn btn-primary" (click)="editOnClick()">
+                    Edit
+                </button>
+            </td>
+            <td>
+                <button class="btn btn-danger" (click)="getAllTasks()">
+                    Delete
+                </button>
+            </td>
+        </tr>
+
+-->
